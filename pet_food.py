@@ -31,7 +31,7 @@ if pet_type != "-- Select --":
     try:
         response = requests.get(image_url)
         image = Image.open(BytesIO(response.content))
-        st.image(image, caption=f"{pet_type}", use_column_width=True)
+        st.image(image, caption=f"{pet_type}", use_container_width=True)
     except Exception as e:
         st.warning("Image could not be loaded. Please check the URL.")
 
