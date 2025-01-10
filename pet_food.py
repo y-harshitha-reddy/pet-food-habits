@@ -3,7 +3,7 @@ import pandas as pd
 from PIL import Image
 
 # Load Excel data
-excel_file_path = "C:\Users\91965\Desktop\new project"
+excel_file_path = "Pet_Care_Data.xlsx"
 pet_data = pd.read_excel(excel_file_path)
 
 # Title
