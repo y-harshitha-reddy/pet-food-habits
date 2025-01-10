@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 from PIL import Image
+import requests
+from io import BytesIO
 
 # Load Excel data
 excel_file_path = "Pet_Care_Data.xlsx"
@@ -25,12 +27,13 @@ if pet_type != "-- Select --":
     pet_info = pet_data[pet_data["Pet Type"] == pet_type].iloc[0]
 
     # Display Pet Image
-    image_path = pet_info["Image Path"]
+    image_url = pet_info["Image Path"]
     try:
-        image = Image.open(image_path)
+        response = requests.get(image_url)
+        image = Image.open(BytesIO(response.content))
         st.image(image, caption=f"{pet_type}", use_column_width=True)
-    except FileNotFoundError:
-        st.warning("Image not found. Please check the file path.")
+    except Exception as e:
+        st.warning("Image could not be loaded. Please check the URL.")
 
     # Display Pet Details
     st.markdown(f"""
