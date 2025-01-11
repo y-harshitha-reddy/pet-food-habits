@@ -11,7 +11,7 @@ pet_data = pd.read_excel(excel_file_path)
 facts_data = pd.read_excel(facts_excel_file_path)
 
 # Title
-st.title("Pet Care Information System")
+st.title("Pet Care Information System 🐾")
 st.header("Find the best care routine and facts about your pet!")
 
 # Sidebar Filter for Pet Type
