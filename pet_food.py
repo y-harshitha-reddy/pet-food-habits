@@ -3,8 +3,6 @@ import pandas as pd
 from PIL import Image
 import requests
 from io import BytesIO
-pip install -r requirements.txt
-
 
 # Load Excel data
 excel_file_path = "Pet_Care_Data.xlsx"
