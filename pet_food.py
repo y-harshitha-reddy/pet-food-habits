@@ -8,7 +8,7 @@ from io import BytesIO
 st.sidebar.header("Upload Excel Files")
 
 # Input for Pet Care Data
-pet_care_file_path = st.sidebar.text_input("Enter the path for the Pet Care Data file:", "Pet_Care_Data.xlsx")
+pet_care_file_path = st.sidebar.text_input("Pet_Care_Data.xlsx", "Pet_Care_Data.xlsx")
 try:
     pet_care_data = pd.read_excel(pet_care_file_path)
 except FileNotFoundError:
