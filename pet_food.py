@@ -16,7 +16,7 @@ except FileNotFoundError:
     st.stop()
 
 # Input for Interesting Facts Data
-facts_file_path = st.sidebar.text_input("Enter the path for the Interesting Facts file:", "Interesting_Facts.xlsx")
+facts_file_path = st.sidebar.text_input("Interesting_Facts.xlsx", "Interesting_Facts.xlsx")
 try:
     facts_data = pd.read_excel(facts_file_path)
 except FileNotFoundError:
